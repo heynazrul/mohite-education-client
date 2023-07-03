@@ -4,10 +4,18 @@ const Header = () => {
   const navItems = (
     <>
       <li>
-        <Link to={'/'}>Home</Link>
+        <Link
+          to={'/'}
+          className="mr-2 font-medium">
+          Home
+        </Link>
       </li>
       <li>
-        <Link to={'/courses'}>Courses</Link>
+        <Link
+          to={'/courses'}
+          className="mr-2 font-medium">
+          Courses
+        </Link>
       </li>
     </>
   );
@@ -34,7 +42,7 @@ const Header = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-gray-50 rounded-box w-52">
             {navItems}
           </ul>
         </div>
@@ -51,7 +59,10 @@ const Header = () => {
         <Link
           to={'/'}
           className="btn btn-ghost normal-case text-xl   lg:hidden">
-          MohiteTax
+          <div>
+            <span className="font-bold text-center inline-block">Mohite</span>
+            <span className="text-primary font-bold">Education</span>
+          </div>
         </Link>
         <ul className="menu menu-horizontal px-1 hidden lg:flex">{navItems}</ul>
       </div>

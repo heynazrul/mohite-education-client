@@ -6,7 +6,8 @@
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, itaque.",
     "instructor": "Tushar Mohite",
     "price": 999,
-    "rating": 5
+    "rating": 5,
+    "img": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1611&q=80"
   },
   {
     "_id": "2",
@@ -15,6 +16,7 @@
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, itaque.",
     "instructor": "Tushar Mohite",
     "price": 1499,
-    "rating": 4
+    "rating": 4,
+    "img": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80"
   }
 ]

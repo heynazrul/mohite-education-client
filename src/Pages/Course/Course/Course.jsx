@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import PageTitle from '../PageTitle/PageTitle';
 
 import courses from '../../../../public/courses.json';
+import CourseContent from '../CourseContent/CourseContent';
 
 const Course = () => {
     const { id } = useParams();
@@ -11,6 +12,7 @@ const Course = () => {
   return (
     <div>
       <PageTitle course={course} ></PageTitle>
+      <CourseContent></CourseContent>
     </div>
   );
 };

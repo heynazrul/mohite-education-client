@@ -14,7 +14,7 @@ const CourseContent = () => {
         {/* Introduction */}
         <div className="collapse collapse-arrow rounded-none ">
           <input
-            type="radio"
+            type="checkbox"
             name="my-accordion-2"
             // onClick={() => setIsOpenIntro(!isOpenIntro)}
             // checked={isOpenIntro}
@@ -59,7 +59,7 @@ const CourseContent = () => {
         {/* Basics of Accounting */}
         <div className="collapse collapse-arrow rounded-none ">
           <input
-            type="radio"
+            type="checkbox"
             name="my-accordion-2"
             // onClick={() => setIsOpenAccounting(!isOpenAccounting)}
             // checked={isOpenAccounting}
@@ -109,7 +109,7 @@ const CourseContent = () => {
         {/* GST Basics */}
         <div className="collapse collapse-arrow rounded-none ">
           <input
-            type="radio"
+            type="checkbox"
             name="my-accordion-2"
           />
           {/* title side content */}
@@ -150,7 +150,7 @@ const CourseContent = () => {
         {/* Income tax basics  */}
         <div className="collapse collapse-arrow rounded-none ">
           <input
-            type="radio"
+            type="checkbox"
             name="my-accordion-2"
           />
           {/* title side content */}
@@ -185,7 +185,7 @@ const CourseContent = () => {
         {/* TDS Basics */}
         <div className="collapse collapse-arrow rounded-none ">
           <input
-            type="radio"
+            type="checkbox"
             name="my-accordion-2"
           />
           <div className="collapse-title flex items-center justify-between pl-14 bg-gray-100 border border-gray-200 ">
@@ -219,7 +219,7 @@ const CourseContent = () => {
         {/* Companies Act */}
         <div className="collapse collapse-arrow rounded-none ">
           <input
-            type="radio"
+            type="checkbox"
             name="my-accordion-2"
           />
           <div className="collapse-title flex items-center justify-between pl-14 bg-gray-100 border border-gray-200 ">
@@ -253,7 +253,7 @@ const CourseContent = () => {
         {/* Financial Management */}
         <div className="collapse collapse-arrow rounded-none ">
           <input
-            type="radio"
+            type="checkbox"
             name="my-accordion-2"
           />
           <div className="collapse-title flex items-center justify-between pl-14 bg-gray-100 border border-gray-200 ">
@@ -287,7 +287,7 @@ const CourseContent = () => {
         {/* Financial Modelling */}
         <div className="collapse collapse-arrow rounded-none ">
           <input
-            type="radio"
+            type="checkbox"
             name="my-accordion-2"
           />
           <div className="collapse-title flex items-center justify-between pl-14 bg-gray-100 border border-gray-200 ">
@@ -335,7 +335,7 @@ const CourseContent = () => {
         {/* End Game */}
         <div className="collapse collapse-arrow rounded-none ">
           <input
-            type="radio"
+            type="checkbox"
             name="my-accordion-2"
           />
           <div className="collapse-title flex items-center justify-between pl-14 bg-gray-100 border border-gray-200 ">

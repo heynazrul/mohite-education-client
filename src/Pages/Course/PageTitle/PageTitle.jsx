@@ -6,19 +6,20 @@ import { LuInfinity } from 'react-icons/lu';
 import { LiaCertificateSolid } from 'react-icons/lia';
 import { Link } from 'react-router-dom';
 
-const PageTitle = ({ course }) => {
+const PageTitle = ({ selectedCourse }) => {
+  console.log(selectedCourse);
   return (
     <div className={`bg-gradient-to-b from-gray-700 via-gray-900 to-black h-[450px] relative`}>
       <div className="max-w-7xl mx-auto px-4">
         <div className="absolute top-1/2 -translate-y-1/2 space-y-4">
-          <h2 className="text-5xl font-bold text-base-100">{course.name}</h2>
-          <p className="text-lg font-medium text-base-100">{course.description}</p>
+          <h2 className="text-5xl font-bold text-base-100">{selectedCourse.name}</h2>
+          <p className="text-lg font-medium text-base-100">{selectedCourse.description}</p>
 
           {/* Rating */}
           <div className="flex items-center gap-2">
             <Rating
               style={{ maxWidth: 80 }}
-              value={course.rating}
+              value={selectedCourse.rating}
               readOnly
             />
             <p className="text-base-100">({Math.floor(Math.random() * 20)} Reviews)</p>
@@ -32,7 +33,7 @@ const PageTitle = ({ course }) => {
               </div>
             </div>
             <p className="text-base-100">
-              By <span className="font-semibold ">{course.instructor}</span>
+              By <span className="font-semibold ">{selectedCourse.instructor}</span>
             </p>
           </div>
 
@@ -54,13 +55,13 @@ const PageTitle = ({ course }) => {
         {/* Course preview */}
         <figure>
           <img
-            src={course.img}
+            src={selectedCourse.img}
             alt="Shoes"
           />
         </figure>
         <div className="card-body">
           <div className="flex gap-4 items-center">
-            <h2 className="card-title font-bold">INR {course.price} </h2>
+            <h2 className="card-title font-bold">INR {selectedCourse.price} </h2>
             <p className="line-through text-xs">INR 1500</p>
           </div>
           <div className="card-actions mt-4">
@@ -70,23 +71,23 @@ const PageTitle = ({ course }) => {
           </div>
 
           {/* Course includes */}
-          <div className='space-y-2'>
-            <h2 className='text-lg font-bold'>This course includes:</h2>
-            <div className='flex items-center gap-4'>
+          <div className="space-y-2">
+            <h2 className="text-lg font-bold">This course includes:</h2>
+            <div className="flex items-center gap-4">
               <MdOutlineOndemandVideo></MdOutlineOndemandVideo>
-              <p className='text-sm'>40 hours on-demand video</p>
+              <p className="text-sm">40 hours on-demand video</p>
             </div>
-            <div className='flex items-center gap-4'>
+            <div className="flex items-center gap-4">
               <RiFileList2Line></RiFileList2Line>
-              <p className='text-sm'>{course.lessons} Lessons</p>
+              <p className="text-sm">{selectedCourse.lessons} Lessons</p>
             </div>
-            <div className='flex items-center gap-4'>
+            <div className="flex items-center gap-4">
               <LuInfinity></LuInfinity>
-              <p className='text-sm'>Lifetime Access</p>
+              <p className="text-sm">Lifetime Access</p>
             </div>
-            <div className='flex items-center gap-4'>
+            <div className="flex items-center gap-4">
               <LiaCertificateSolid></LiaCertificateSolid>
-              <p className='text-sm'>Certificate of completion</p>
+              <p className="text-sm">Certificate of completion</p>
             </div>
           </div>
         </div>

@@ -6,6 +6,10 @@ import Main from './Layout/Main';
 import Home from './Pages/Home/Home/Home';
 import Course from './Pages/Course/Course/Course';
 import Cart from './Pages/Cart/Cart';
+import Gdpr from './Pages/FooterMenu/GDPR/Gdpr';
+import Privacy from './Pages/FooterMenu/Privacy/Privacy';
+import RefundPolicy from './Pages/FooterMenu/RefundPolicy/RefundPolicy';
+import TermsCondition from './Pages/FooterMenu/TermsCondition/TermsCondition';
 
 const router = createBrowserRouter([
   {
@@ -18,12 +22,30 @@ const router = createBrowserRouter([
       },
       {
         path: 'course/:id',
-        element: <Course></Course>
+        element: <Course></Course>,
       },
       {
         path: 'cart',
-        element: <Cart></Cart>
-      }
+        element: <Cart></Cart>,
+      },
+
+      // Footer
+      {
+        path: 'gdpr',
+        element: <Gdpr></Gdpr>,
+      },
+      {
+        path: 'terms-condition',
+        element: <TermsCondition></TermsCondition>,
+      },
+      {
+        path: 'privacy-policy',
+        element: <Privacy></Privacy>,
+      },
+      {
+        path: 'refund-policy',
+        element: <RefundPolicy></RefundPolicy>,
+      },
     ],
   },
 ]);

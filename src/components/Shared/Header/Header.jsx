@@ -1,6 +1,20 @@
 import { Link } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
+import { FaUserCircle } from 'react-icons/fa';
 
 const Header = () => {
+  const { user, logOut, setLoading } = useAuth();
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        toast.success('Logged Out!');
+        setLoading(false);
+        // navigate('/', {replace: true})
+      })
+      .catch((error) => console.log(error));
+  };
+
   const navItems = (
     <>
       <li>
@@ -17,6 +31,34 @@ const Header = () => {
           Courses
         </Link>
       </li>
+    </>
+  );
+
+  const userNavItem = (
+    <>
+      {/* Conditional Login button */}
+      {user ? (
+        <>
+          <Link
+            onClick={handleLogOut}
+            className="btn btn-primary btn-sm mr-3 hidden lg:inline-flex">
+            Logout
+          </Link>
+        </>
+      ) : (
+        <>
+          <Link
+            to={'/login'}
+            className="btn btn-outline btn-sm mr-3 hidden lg:inline-flex">
+            Login
+          </Link>
+          <Link
+            to={'register'}
+            className="btn btn-neutral btn-sm hidden lg:inline-flex">
+            Register
+          </Link>
+        </>
+      )}
     </>
   );
   return (
@@ -42,8 +84,30 @@ const Header = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-gray-50 rounded-box w-52">
+            className="menu menu-sm dropdown-content mt-3 z-50 p-2 shadow bg-gray-50 rounded-box w-52">
             {navItems}
+            {user ? (
+              <>
+                <Link
+                  onClick={handleLogOut}
+                  className="btn btn-primary btn-sm">
+                  Logout
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link
+                  to={'/login'}
+                  className="btn btn-outline btn-sm mb-2">
+                  Login
+                </Link>
+                <Link
+                  to={'register'}
+                  className="btn btn-neutral btn-sm">
+                  Register
+                </Link>
+              </>
+            )}
           </ul>
         </div>
         <Link
@@ -106,16 +170,34 @@ const Header = () => {
             </div>
           </div>
         </div>
-        <Link
+        {/* Conditional User Profile */}
+        {user && (
+          <Link
+            to={'/'}
+            className="inline-flex mr-3">
+            <div
+              className="avatar tooltip  tooltip-bottom z-30"
+              data-tip={`${user?.displayName ? user.displayName : ''}`}>
+              <div className="w-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 ">
+                {user.photoURL ? (
+                  <img
+                    src={user.photoURL}
+                    alt=""
+                  />
+                ) : (
+                  <FaUserCircle size={32}></FaUserCircle>
+                )}
+              </div>
+            </div>
+          </Link>
+        )}
+
+        {userNavItem}
+        {/* <Link
           to={'login'}
           className="btn btn-outline btn-sm mr-4">
           Login
-        </Link>
-        <Link
-          to={'login'}
-          className="btn btn-neutral btn-sm">
-          Sign up
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

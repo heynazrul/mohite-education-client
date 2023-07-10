@@ -10,6 +10,8 @@ import Gdpr from './Pages/FooterMenu/GDPR/Gdpr';
 import Privacy from './Pages/FooterMenu/Privacy/Privacy';
 import RefundPolicy from './Pages/FooterMenu/RefundPolicy/RefundPolicy';
 import TermsCondition from './Pages/FooterMenu/TermsCondition/TermsCondition';
+import Register from './Pages/Register/Register';
+import AuthProvider from './providers/AuthProvider';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: 'cart',
         element: <Cart></Cart>,
+      },
+      {
+        path: 'register',
+        element: <Register></Register>,
       },
 
       // Footer
@@ -52,6 +58,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>
 );
